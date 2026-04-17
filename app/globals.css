@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white antialiased;
+    color: #1e293b; /* grey-800 */
+  }
+
+  /* Scrollbar Styling (Use raw CSS to avoid @apply conflicts) */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f8fafc; /* grey-50 */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* slate-300 */
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; /* grey-400 */
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 md:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-blue-bright to-blue-glow bg-clip-text text-transparent;
+  }
+
+  .gradient-text-orange {
+    @apply bg-gradient-to-r from-orange-main to-orange-light bg-clip-text text-transparent;
+  }
+}
+
+/* Skip Link Accessibility */
+.skip-link {
+  @apply sr-only;
+}
+.skip-link:focus {
+  @apply not-sr-only fixed top-4 left-4 z-50 px-4 py-2 rounded-lg bg-blue-main text-white;
+}
